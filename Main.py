@@ -83,7 +83,7 @@ def determineBestMatch2(jargonDict):
     matchScores = []
     for option in jargonDict.values()[0]:
         matchScores.append((SequenceMatcher(None, option, originalSentence).ratio(),option))
-    if len(matchScores) != 0 and matchScores[-1][0] >= 0.5:
+    if len(matchScores) != 0 and matchScores[-1][0] >= 0.1:
         return sorted(matchScores)[-1][1]
     else:
         return ''
@@ -101,7 +101,7 @@ if __name__ == '__main__':
     text4 = "The tissue of both breasts is predominantly fatty. No suspicious masses, calcifications, or other findings are seen in either breast."
     text5 = "There is no mammographic evidence of malignancy.  A 1 year screening mammogram is recommended."
     text6 = "There are scattered areas of fibroglandular density"
-    text7 = "Additional reviews are recommended."
+    text7 = "breasts are fatty"
     textB = "Comparison is made to exams dated:  7/2/2012 mammogram - Cancer Center-Breast Imaging and 6/29/2011 mammogram - South Breast Imaging. The tissue of both breasts is predominantly fatty. No suspicious masses, calcifications, or other findings are seen in either breast. There has been no significant interval change. IMPRESSION: NEGATIVE There is no mammographic evidence of malignancy.  A 1 year screening mammogram is recommended. The patient was notified of the results. BI-RADS: 1 Negative"
     text = parseFromPatientRecord(textB.strip())
     #functions work per sentence

@@ -21,6 +21,8 @@ def parseFromExcel(fileName):
 	    key = str(worksheet.cell(x,0).value)
 	    val =  str(worksheet.cell(x,1).value)
 	    dict[key] = val
+	    
+	#print(dict)
 	return dict
 
     
