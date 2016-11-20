@@ -111,8 +111,9 @@ if __name__ == '__main__':
         print("\nINPUT STRING: " + text[i])
         print ("MATCHED STRING: " + string)
         print ("TRANSLATION: " + jargonDict[string])
-        translatedReports[text[i]] = jargonDict[string]
-        
+        if (jargonDict[string]).strip():
+            translatedReports[text[i]] = jargonDict[string]
+    
 def getTransalation(input):
     fil = "MammoTerms.xls"
     jargonDict = excel.parseFromExcel(fil)
@@ -122,5 +123,7 @@ def getTransalation(input):
     for i in range(len(text)):
         string = testDriver(text[i],jargonDict)
         translatedReports[text[i]] = jargonDict[string]
+        if (jargonDict[string]).strip():
+            translatedReports[text[i]] = jargonDict[string]
     return translatedReports
     

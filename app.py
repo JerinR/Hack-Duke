@@ -18,7 +18,7 @@ class Index(object):
     def POST(self):
         form = web.input(name="Nobody", greet="Hello")
         greeting =  (Main.getTransalation(str(form.greet)))
-        text='<html><body style=""><h1>Simplify MyReport</h1> <form action="/getTranslation" method="POST">   Report Cntent: <br/><textarea type="text" rows="5" cols="150" name="greet">'+str(form.greet)+'</textarea><br/><input type="submit" value="Simplify"> </form> <br/> <h3>Simplified Report</h3><table border=1><tr><th>Medical Terms</th><th>Simplified Report</th></tr>'
+        text='<html><body bgcolor="lightblue"><h1 align="center">Simplify MyReport</h1> <form action="/getTranslation" method="POST">   <h3>Report Content:</h3><textarea type="text" rows="5" cols="150" name="greet">'+str(form.greet)+'</textarea><br/><input type="submit" value="Simplify"> </form><h3>Simplified Report</h3><table border=1><tr><th>Medical Terms</th><th>Simplified Report</th></tr>'
         for i in range(len(greeting.keys())):
             text+="<tr><td>"+greeting.keys()[i]+"</td><td>"+greeting.values()[i]+"</td></tr>"
         text+='</table></body>'
